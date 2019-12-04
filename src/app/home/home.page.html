@@ -1,0 +1,96 @@
+<ion-header class="ion-padding">
+  <ion-toolbar>
+    <ion-searchbar border color="medium" [(ngModel)]="searchInput" (ionChange)="onInput()"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+     <p class="font-weight-bold mb0"> You may also search:</p>
+     <!-- Grid for col-4 division -->
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3">
+          <div class="box">
+            <p class="fsize weight">#flatshoes</p>
+            <p class="fsize mt-0">16K posts</p>
+          </div>
+        </ion-col>
+
+        <ion-col size="2.9">
+          <div class="box">
+            <p class="fsize weight">#heels<br></p>
+            <p class="fsize mt-0">5K posts</p>
+          </div>
+        </ion-col>
+
+        <ion-col size="3">
+          <div class="box">
+            <p class="fsize weight">#redshoes</p>
+            <p class="fsize mt-0">6K posts</p>
+          </div>
+        </ion-col>
+
+        <ion-col size="3.1">
+          <div class="box">
+            <p class="fsize weight">#sportshoes</p>
+            <p class="fsize mt-0">1K posts</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-row>
+      <ion-col size="6">
+        <div class="content">
+          <p class="text-center font-weight-bold mb0">200K</p>
+          <p class="text-center fsize1">Number of people talking about #fashion, #shoe</p>
+        </div>
+      </ion-col>
+
+      <ion-col size="6">
+        <div class="content">
+          <p class="text-center font-weight-bold mb0">20K</p>
+          <p class="text-center fsize1">Number of kofluence influencers talking about #fashion, #shoe</p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+<!-- With search for case2 -->
+<div *ngIf="loading">
+ <ion-row>
+  <div *ngFor="let image of gallery.images">
+    <ion-col size="6">
+      <div *ngIf="searchInput == image.catg" [style.display]="none">
+        <ion-grid>
+          <img  src="./assets/images/{{image.img}}" >
+        </ion-grid>
+      </div>
+    </ion-col>
+  </div>
+ </ion-row>
+</div>
+<!-- Display sandals Only case1 -->
+<div *ngIf="loading && searchInput == '#sandals' ">
+  <ion-row>
+    <ion-col size="6" *ngFor="let image of gallery.sandals" >
+      <ion-grid>
+        <img src="./assets/images/{{image}}" >
+      </ion-grid>
+    </ion-col>
+ </ion-row>
+</div>
+<div *ngIf="!loading && searchInput" class="no-products">
+  <h2>No Products found!</h2>
+</div>
+<!-- Without search -->
+<div *ngIf="!loading && !searchInput">
+ <ion-row>
+    <ion-col size="6" *ngFor="let image of gallery.images">
+      <ion-grid>
+        <img src="./assets/images/{{image.img}}" >
+      </ion-grid>
+    </ion-col>
+ </ion-row>
+</div>
+
+</ion-content>

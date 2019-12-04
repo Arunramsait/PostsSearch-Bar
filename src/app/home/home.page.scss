@@ -1,0 +1,103 @@
+:root {
+      --ion-safe-area-top: 30px;
+      --ion-safe-area-bottom: 22px;
+    }
+
+    .ion-color-primary{
+    --ion-color-base:var(--ion-color-primary, #3880ff)!important;
+    }
+
+    .padding{
+    	padding:10px;
+    }
+    .border{
+    	border-radius:15px;
+    }
+     .box{
+    border-radius: 15px;
+    padding: 5px;
+    background-color:rgba(255,165,0,0.5);
+    }
+    .fsize{
+    font-size:10px;
+    padding-bottom:2px;
+    margin-bottom:2px;
+    }
+    .fsize1{
+    font-size:12px !important;
+    }
+    .weight{
+    font-weight:700;
+    }
+    .mt-0{
+    margin-top:0px;
+    }
+    .text-justify{
+    text-align:justify !important;
+    }
+    .mb0{
+    	margin-bottom:3px;
+    }
+/* tab */
+.tab {
+  
+  background-color: white;
+}
+
+/* Style the buttons inside the tab */
+.tab-pane .fade {
+  background-color: white;
+  float: left;
+  border:none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+/* Create an active/current tablink class */
+.tab-pane .active {
+  border-bottom: 1px solid yellow;
+}
+.nav{
+	overflow: hidden;
+}
+.nav-tabs {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.nav-tabs .nav-item {
+  margin-bottom: -1px;
+}
+
+.nav-tabs .nav-link {
+  border: 1px solid transparent;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+  border-color: #e9ecef #e9ecef #dee2e6;
+}
+
+.nav-tabs .nav-link.disabled {
+  color: #6c757d;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: #495057;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.nav-tabs .dropdown-menu {
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.tab-content > .tab-pane {
+  display: none;
+}
